@@ -54,10 +54,10 @@ public class ChatThread extends Thread{
                 //나를 포함한 ChatThread에게 메세지를 보낸다.
             }
         } catch (Exception e) { // ChatThread가 연결이 끊어졌다.
-            e.printStackTrace();
-            this.list.remove(this);
+
         }finally {
             broadcast(name+" 님의 연결이 끊어졌습니다.", false);
+            this.list.remove(this);
             try {
                 br.close();
             } catch (Exception e) {
